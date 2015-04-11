@@ -60,7 +60,7 @@ public abstract class CodeJam {
     public void printResult(String answer) {
         try {
             o.write("Case #" + (currentCase) + ": " + answer + "\n");
-
+            System.out.print("Case #" + (currentCase) + ": " + answer + "\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
