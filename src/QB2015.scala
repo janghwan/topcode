@@ -45,7 +45,7 @@ class QB2015(fileName: String) extends CodeJam(fileName) {
     }
 
     println(row.toList.toString)
-    printResult(sol2.toString)
+    printResult(time(row.toList, 0, Int.MaxValue).toString)
 
 
   }

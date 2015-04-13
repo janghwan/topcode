@@ -45,13 +45,13 @@ class QC2015(fileName: String) extends CodeJam(fileName) {
 
 
   def solve(): Unit = {
-    val row: Array[Int] = br.readLine.split("\\s+").map(_.toInt)
+    val row: Array[Long] = br.readLine.split("\\s+").map(_.toLong)
 
-    val LL = row(0)
+    val LL = row(0).toInt
     val X = row(1)
     val line = br.readLine().map(mapping).toArray
 
-    val x = if (X > 4) 4 else X
+    val x = if (X > 4) 4 else X.toInt
     val multF: Array[L] = Array.ofDim(x * LL)
     val multR: Array[L] = Array.ofDim(x * LL)
 
@@ -73,7 +73,7 @@ class QC2015(fileName: String) extends CodeJam(fileName) {
           var jIndex = i + 1
           var j = line(jIndex % line.length)
 
-          while (jIndex - i < multF.length) {
+          while (jIndex - i < multF.length && jIndex < (X.toLong * LL.toLong) - 1) {
             val kIndex = if (jIndex + 1 >= (X.toLong * LL.toLong) % multF.length) {
               ((jIndex + 1 - ((X.toLong * LL.toLong) % multF.length)) % multF.length).toInt
             } else {
