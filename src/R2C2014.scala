@@ -1,103 +1,83 @@
-import java.io.IOException
 
 /**
  * Created by essis on 15. 3. 15..
  */
 class R2C2014(fileName: String) extends CodeJam(fileName) {
   def solve(): Unit = {
-   /* br.readLine
     val row: Array[Int] = br.readLine.split("\\s+").map(_.toInt)
     val W = row(0)
     val H = row(1)
     val B = row(2)
 
 
-    val mat = Array.ofDim[(Int, Boolean, Boolean)](W, H)
+    val dist = Array.ofDim[Int](B)
+    val checked = Array.ofDim[Boolean](B)
+    val buildings = Array.ofDim[((Int, Int), (Int, Int))](B)
 
-    for (
-      i <- 0 until W;
-      j <- 0 until H
-    ) {
-      mat(i)(j) = (0, false, false)
+    def distance(a: ((Int, Int), (Int, Int)), b: ((Int, Int), (Int, Int))) = {
+      val dx = if (a._1._1 > b._2._1) {
+        a._1._1 - b._2._1 -1
+      } else if (a._2._1 < b._1._1) {
+        b._1._1 - a._2._1 - 1
+      } else 0
+
+      val dy = if (a._1._2 > b._2._2) {
+        a._1._2 - b._2._2 - 1
+      } else if (a._2._2 < b._1._2) {
+        b._1._2 - a._2._2 - 1
+      } else 0
+
+      Math.max(dx, dy)
+    }
+
+
+    def min = {
+      var min = Int.MaxValue
+      var index = -1
+      for (i <- dist.indices) {
+        if (!checked(i) && dist(i) < min) {
+          min = dist(i)
+          index = i
+        }
+      }
+      index
     }
 
     for (
       i <- 0 until B
     ) {
       val b = br.readLine.split("\\s+").map(_.toInt)
-      for (
-        j <- b(0) to b(2);
-        k <- b(1) to b(3)
-      ) {
-        mat(j)(k) = mat(j)(k).copy(_2 = true)
-      }
+      buildings(i) = ((b(0), b(1)), (b(2), b(3)))
+      //distance from start
+      dist(i) = buildings(i)._1._1
     }
 
-    var ans = 0
+    var m = min
 
-    //initial flow
-    for(
-      x <- 0 until W;
-      //y <- 0 until H
-    ) {
-      if (!mat(x)(0)._2) {
-        mat(x)(0) = mat(x)(0).copy(_1 = 1, _3 = true)
-      }
-    }
-    for(
-      x <- 0 until W;
-      y <- 0 until H
-    ) {
-      if (y + 1 < W) {
-        if (mat(x)(y)._1 > 0) {
-          if (mat(x)(y+1)._1 == 0 && !mat(x)(y+1)._2) {
-            mat(x)(y+1) = mat(x)(y+1).copy(_1 = 1)
-          } else if (x - 1 >= 0 && mat(x-1)(y)._1 == 0 && !mat(x-1)(y)._2) {
-            mat(x-1)(y) = mat(x-1)(y).copy(_1 = 1)
-          } else if (x + 1 < W && mat(x+1)(y)._1 == 0 && !mat(x+1)(y)._2) {
-            mat(x+1)(y) = mat(x+1)(y).copy(_1 = 1)
-          }
+    while (m >= 0) {
+      for (i <- dist.indices) {
+        if ( i != m ) {
+          dist(i) = Math.min(
+            distance(buildings(m), buildings(i)) + dist(m),
+            dist(i)
+          )
         }
-
       }
-    }*/
+      checked(m) = true
+      m = min
+    }
+
+    //finding distance from the left
+
+    for (i <- dist.indices) {
+      dist(i) = dist(i) + (W - buildings(i)._2._1 - 1)
+    }
+
+    val sol = Math.min(dist.fold(Int.MaxValue)(Math.min), W)
+    printResult(sol.toString)
   }
 
   def init(): Unit = {
 
-  }
-}
-
-object R2C2014 {
-  def main(args: Array[String]) {
-    var fileName: String = "A-"
-    if (args(0).compareTo("small") == 0) {
-      fileName += "small"
-    }
-    else if (args(0).compareTo("large") == 0) {
-      fileName += "large"
-    }
-    else if (args(0).compareTo("sample") == 0) {
-      fileName += "sample"
-    }
-    else {
-      System.out.println("small or large or sample")
-      return
-    }
-    if (args(1).compareTo("1") == 0) {
-      fileName += "-practice.in.txt"
-    }
-    else {
-      fileName += ".in.txt"
-    }
-    try {
-      val codeJam: R2C2014 = new R2C2014(fileName)
-      codeJam.run
-    }
-    catch {
-      case e: IOException => {
-        System.err.print(e)
-      }
-    }
   }
 }
