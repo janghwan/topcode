@@ -136,7 +136,15 @@ class R1B2015(fileName: String) extends CodeJam(fileName) {
     val batch = ar.fold(0L)((a,b) => a + (lcm / b))
     println(s"lcm $lcm, batch $batch")
     if (N % batch == 0) {
-      printResult(s"$B")
+      var m = Long.MaxValue
+      var sol = 0
+      for (i <- ar.indices) {
+        if ((batch - 1)% ar(i) <= m) {
+          m = (batch - 1) % ar(i)
+          sol = i
+        }
+      }
+      printResult(s"${sol+1}")
       return
     }
     val sol = bsearch2(0, lcm, N % batch, ar) + 1
