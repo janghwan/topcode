@@ -28,7 +28,7 @@ object Main {
       fileName += ".in.txt"
     }
     try {
-      val codeJam: CodeJam = new R2C2014(fileName)
+      val codeJam: CodeJam = new R1B2015(fileName)
       codeJam.run
     }
     catch {
