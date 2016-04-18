@@ -37,6 +37,7 @@ class QC2015(fileName: String) extends CodeJam(fileName) {
       case (K(x), I(y)) => J(x * y)
       case (K(x), J(y)) => I(- x * y)
       case (K(x), K(y)) => O(- x * y)
+      case _ => throw new Exception
 
     }
 

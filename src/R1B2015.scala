@@ -15,7 +15,7 @@ class R1B2015(fileName: String) extends CodeJam(fileName) {
     (a * b) / GCD(a,b)
   }
 
-  @tailrec
+//  @tailrec
   private def bsearch2(a: BigInt, b: BigInt, target: BigInt, ar: Array[BigInt]): Int = {
 
     val center = (a + b) / 2
