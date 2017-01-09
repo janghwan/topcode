@@ -1,3 +1,5 @@
+import lib.CodeJam;
+
 import java.io.IOException;
 import java.util.PriorityQueue;
 

@@ -1,5 +1,8 @@
 import java.io.IOException
 
+import hackercup.y2016.qualification._
+import lib.CodeJam
+
 /**
  * @author Janghwan Lee <jlee@sazze.com>
  *         Sazze, Inc. 2015
@@ -28,7 +31,7 @@ object Main {
       fileName += ".in.txt"
     }
     try {
-      val codeJam: CodeJam = new R1AB2016(fileName)
+      val codeJam: CodeJam = new D(fileName)
       codeJam.run
     }
     catch {

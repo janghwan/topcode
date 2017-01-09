@@ -1,3 +1,5 @@
+package lib;
+
 import java.io.*;
 
 /**
@@ -8,8 +10,8 @@ import java.io.*;
 public abstract class CodeJam {
 
     protected BufferedReader br;
-    int totalCases;
-    int currentCase;
+    protected int totalCases;
+    protected int currentCase;
     BufferedWriter o;
 
     public CodeJam() {

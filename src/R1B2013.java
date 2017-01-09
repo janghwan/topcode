@@ -1,7 +1,8 @@
+import lib.CodeJam;
+
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.PriorityQueue;
 
 /**
  * User: jlee

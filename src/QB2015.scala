@@ -1,3 +1,5 @@
+import lib.CodeJam
+
 import scala.annotation.tailrec
 
 /**

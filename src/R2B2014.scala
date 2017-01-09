@@ -1,5 +1,7 @@
 import java.io.IOException
 
+import lib.CodeJam
+
 /**
  * Created by essis on 15. 3. 15..
  */

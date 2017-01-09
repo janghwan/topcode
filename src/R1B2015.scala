@@ -1,3 +1,5 @@
+import lib.CodeJam
+
 import scala.annotation.tailrec
 
 
@@ -57,6 +59,7 @@ class R1B2015(fileName: String) extends CodeJam(fileName) {
       }
       printResult(s"${sol+1}")
       return
+
     }
     val sol = bsearch2(0, lcm, N % batch, ar) + 1
     printResult(sol.toString)
