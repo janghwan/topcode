@@ -1,3 +1,5 @@
+import lib.CodeJam
+
 import scala.collection.mutable
 
 class R1AC2016(fileName: String) extends CodeJam(fileName) {
@@ -29,7 +31,7 @@ class R1AC2016(fileName: String) extends CodeJam(fileName) {
       }
     }
 
-      printResult(out.toString().trim)
+//      printResult(out.toString().trim)
   }
 
   def init(): Unit = {

@@ -1,3 +1,5 @@
+import lib.CodeJam
+
 import scala.annotation.tailrec
 
 class QB2016(fileName: String) extends CodeJam(fileName) {

@@ -1,5 +1,7 @@
 import java.math.MathContext
 
+import lib.CodeJam
+
 import scala.annotation.tailrec
 
 class QA2016(fileName: String) extends CodeJam(fileName) {

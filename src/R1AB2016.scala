@@ -1,4 +1,4 @@
-
+import lib.CodeJam
 
 class R1AB2016(fileName: String) extends CodeJam(fileName) {
   def solve(): Unit = {

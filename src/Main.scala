@@ -1,6 +1,6 @@
 import java.io.IOException
 
-import hackercup.y2016.qualification._
+import hackercup.y2017.R1._
 import lib.CodeJam
 
 /**
@@ -31,7 +31,7 @@ object Main {
       fileName += ".in.txt"
     }
     try {
-      val codeJam: CodeJam = new D(fileName)
+      val codeJam: CodeJam = new A(fileName)
       codeJam.run
     }
     catch {

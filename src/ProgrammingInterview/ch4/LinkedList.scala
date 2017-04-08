@@ -8,4 +8,4 @@ class LinkedList {
 
 }
 
-case class ListElement[T] (data: T, next: ListElement = null)
+//case class ListElement[T] (data: T, next: ListElement = null)
