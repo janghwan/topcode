@@ -1,6 +1,6 @@
 import java.io.IOException
 
-import hackercup.y2017.R1._
+import codejam.y2017.qualification._
 import lib.CodeJam
 
 /**
