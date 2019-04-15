@@ -14,6 +14,6 @@ sol (x : xs) = (x, '0') : sol xs
 
 main = enumFromTo 1 <$> readLn >>= mapM_ doCase
     where doCase caseno = do
-                        n <- getLine
+                        n <- zgetLine
                         putStrLn $ "Case #" ++ show caseno ++ ": " ++
                                 (solution n)
