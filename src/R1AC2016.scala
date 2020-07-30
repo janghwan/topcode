@@ -4,7 +4,7 @@ import scala.collection.mutable
 
 class R1AC2016(fileName: String) extends CodeJam(fileName) {
   def solve(): Unit = {
-    val N = br.readLine.toInt
+    /*val N = br.readLine.toInt
 
     var paths = Set[mutable.DoubleLinkedList[Int]]()
 
@@ -29,7 +29,8 @@ class R1AC2016(fileName: String) extends CodeJam(fileName) {
 
         paths = paths + list
       }
-    }
+
+    }*/
 
 //      printResult(out.toString().trim)
   }

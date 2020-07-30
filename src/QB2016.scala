@@ -1,6 +1,7 @@
 import lib.CodeJam
 
 import scala.annotation.tailrec
+import scala.language.postfixOps
 
 class QB2016(fileName: String) extends CodeJam(fileName) {
   def solve(): Unit = {

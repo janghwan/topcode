@@ -1,7 +1,7 @@
 import java.math.MathContext
 
 import lib.CodeJam
-
+import scala.language.postfixOps
 /**
  * Created by essis on 15. 3. 15..
  */

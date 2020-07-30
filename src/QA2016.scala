@@ -3,6 +3,7 @@ import java.math.MathContext
 import lib.CodeJam
 
 import scala.annotation.tailrec
+import scala.language.postfixOps
 
 class QA2016(fileName: String) extends CodeJam(fileName) {
   def solve(): Unit = {
