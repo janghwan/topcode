@@ -33,7 +33,7 @@ object Main {
       fileName += ".in.txt"
     }
     try {
-      val codeJam: CodeJam = new Capastaty(fileName)
+      val codeJam: CodeJam = new Elimination(fileName)
       codeJam.run
     }
     catch {

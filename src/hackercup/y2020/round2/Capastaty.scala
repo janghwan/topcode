@@ -40,14 +40,14 @@ class Capastaty(fileName: String) extends CodeJam(fileName) {
 
     for (i <- 0 until N) {
       val s = if (i < K) S(i)
-      else (AS * rrecentS + BS * recentS + CS) % DS + 1
+      else (AS * rrecentS + BS * recentS + CS) % DS
       val x = if (i < K) X(i)
-      else (AX * rrecentX + BX * recentX + CX) % DX + 1
+      else (AX * rrecentX + BX * recentX + CX) % DX
       val y = if (i < K) Y(i)
-      else (AY * rrecentY + BY * recentY + CY) % DY + 1
+      else (AY * rrecentY + BY * recentY + CY) % DY
       short += Math.max(x - s, 0)
       long += Math.max(s - x - y, 0)
-      mid += Math.max(s - x, 0)
+      mid += Math.min(Math.max(s - x, 0), y)
       buff += y
       rrecentS = recentS
       recentS = s
