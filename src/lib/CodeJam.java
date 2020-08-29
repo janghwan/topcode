@@ -1,6 +1,7 @@
 package lib;
 
 import java.io.*;
+import java.util.Scanner;
 
 /**
  * User: jlee
@@ -10,6 +11,7 @@ import java.io.*;
 public abstract class CodeJam {
 
     protected BufferedReader br;
+    protected Scanner sc;
     protected int totalCases;
     protected int currentCase;
     BufferedWriter o;
@@ -25,6 +27,7 @@ public abstract class CodeJam {
     public CodeJam(String filename) throws IOException {
         br = new BufferedReader(new FileReader(filename));
         String line = br.readLine();
+        sc = new java.util.Scanner(br);
         totalCases = Integer.parseInt(line);
         o = new BufferedWriter(new FileWriter("output.txt"));
     }
